@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @TonySmith1sme
-- 👀 I’m interested in Linux
-- 🌱 I’m currently learning ***Nothing***
+# 👀 I’m interested in ...
+- Linux
 # 📫 How to reach me 
 - [Telegram](https://t.me/TonySmith_1s_me)
 - Email:tonysmith1sme@gmail.com
