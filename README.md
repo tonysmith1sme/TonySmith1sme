@@ -7,7 +7,7 @@ A Linux noob,using Arch Linux
 
 # 👀 I’m interested in ...
 - Linux
-- BGP Network(but i'm not a professional BGP player :( )
+- BGP Network (but i'm not a professional BGP player)
 
 # 📫 How to reach me 
 - [Telegram](https://t.me/TonySmith_1s_me)
