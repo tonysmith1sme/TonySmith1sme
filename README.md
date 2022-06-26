@@ -1,0 +1,4 @@
+- 👋 Hi, I’m @TonySmith1sme
+- 👀 I’m interested in Linux
+- 🌱 I’m currently learning ***Nothing***
+- 📫 How to reach me [Telegram](https://t.me/TonySmith_1s_me) or Email:tonysmith1sme@gmail.com
