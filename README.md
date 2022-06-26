@@ -1,4 +1,5 @@
-- 👋 Hi, I’m @TonySmith1sme
+# 👋 Hi, I’m @TonySmith1sme
+A Linux noob,using Arch Linux
 # 👀 I’m interested in ...
 - Linux
 # 📫 How to reach me 
