@@ -4,5 +4,5 @@
 - 📫 How to reach me [Telegram](https://t.me/TonySmith_1s_me) or Email:tonysmith1sme@gmail.com
 
 <div align="center">
-  <img src="https://github.com/TonySmith1sme/TonySmith1sme/raw/main/tonyv1-white-shadow.png">
+  <img src="https://github.com/TonySmith1sme/TonySmith1sme/raw/main/tonyv1-white-shadow.png" width="400">
 </div>
