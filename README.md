@@ -15,5 +15,5 @@ A Linux noob,using Arch Linux
 
 # 🖋 My signature
 <div align="center">
-  <img src="https://github.com/TonySmith1sme/TonySmith1sme/raw/main/tonyv1-white-shadow.png" width="400">
+  <img src="https://fastly.jsdelivr.net/gh/TonySmith1sme/TonySmith1sme/tonyv1-white-shadow.png" width="400">
 </div>
