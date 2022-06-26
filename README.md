@@ -13,7 +13,7 @@ A Linux noob,using Arch Linux
 - Email:tonysmith1sme@gmail.com
 
 # My signature
-
+Signed with WACOM CTL-472
 <div align="center">
   <img src="https://github.com/TonySmith1sme/TonySmith1sme/raw/main/tonyv1-white-shadow.png" width="400">
 </div>
