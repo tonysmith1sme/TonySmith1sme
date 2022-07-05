@@ -1,5 +1,5 @@
 # 👋 Hi, I’m @TonySmith1sme
-A Linux noob,using Arch Linux
+A Linux noob,using Arch Linux and macOS
 
 <div align="center">
   <img src="https://github.com/TonySmith1sme/TonySmith1sme/raw/main/2022-06-26_09-03.png" width="1000">
