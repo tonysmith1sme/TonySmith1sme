@@ -9,7 +9,11 @@ head:
 banner:
   enable: true
   title: 
-   - /home/Tony Smith/
+   - Tony
+   - Smith
+   - 的
+   - 小
+   - 屋
   border: true
   cloud:
     enable: true
