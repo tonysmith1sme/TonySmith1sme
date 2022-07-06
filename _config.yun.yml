@@ -1,0 +1,192 @@
+#外观设置
+# 导入MDUI
+head:
+  css:
+    material: https://fonts.googleapis.com/icon?family=Material+Icons
+    remix: https://fastly.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css
+
+# 标语设置
+banner:
+  enable: true
+  title: 
+   - /home/Tony Smith/
+  border: true
+  cloud:
+    enable: true
+    color: white
+  go_down:
+    enable: true
+    icon: ri:arrow-down-s-line
+
+
+# 公告
+notice:
+  enable: true
+  content: 我正在建立Tony Smith这个身份，欢迎大家来跟我做朋友
+
+  src: /js/ui/banner.js
+  border: true
+  cloud:
+    enable: true
+    color: "white"
+  go_down:
+    enable: true
+    icon: icon-arrow-down-s-line
+
+# 背景设置
+bg_image:
+  enable: true
+  url: https://tonysmith.vercel.app/img/bg/99133205_p0.jpg
+  dark: https://tonysmith.vercel.app/img/bg/98348437_p0.png
+  opacity: 0.8
+
+# 亮暗模式
+mode: auto
+
+# 头像设置
+avatar:
+  url: https://tonysmith.vercel.app/avatar.png
+  rounded: true
+  opacity: 1
+
+# 图标设置
+favicon: /favicon.ico
+
+# 颜色设置
+colors:
+  primary: "#6200ee"
+  # bg: "#F5F5F5"
+  selection_bg: "#8e71c1" # 选取文字时的背景色
+  # 标签云中标签的起始色和结束色
+  # tag_start_color:
+  # tag_end_color:
+
+# 烟花设置
+fireworks:
+  enable: true
+  colors:
+    - "102, 167, 221"
+    - "62, 131, 225"
+    - "33, 78, 194"
+cursor:
+  enable: true
+  default: https://fastly.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
+  pointer: https://fastly.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+  text: https://fastly.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
+
+# 代码高亮
+codeblock:
+  copy_btn: true
+  prismjs:
+    light: default
+    dark: tomorrow
+
+# 咕噜咕噜统计
+google_analytics:
+  enable: false
+  id:
+
+# 版权设置
+creative_commons:
+  license: by-nc-nd
+  post: true
+  language: deed.zh
+  clipboard: true
+
+# 页脚设置
+footer:
+  since: 2021
+  live_time:
+    enable: true
+    prefix: 本博客已运行
+    start_time: "2021-11-26 21:38:00"
+  custom_text: <a href="https://travellings.link/" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://travellings.link/assets/logo.gif" alt="开往-友链接力" width="120"></a>
+  powered:
+    enable: true
+
+
+#其他设置
+# 搜索设置
+# search
+# https://github.com/next-theme/hexo-generator-searchdb
+local_search:
+  enable: true
+
+# Waline
+comment:
+  enable: true
+  tips:
+    - 若您想及时得到回复，建议直接TG联系我
+    - 在我发现Waline这个东西的时候，试了一下，发现这是个好东西，所以我就没有用Valine了
+  candidates:
+    - waline
+
+waline:
+  enable: true
+  serverURL: https://waline-ebon-nu.vercel.app/
+  # visitor: true
+  comment: false
+
+# 打赏设置
+reward:
+  enable: false
+# 标签设置
+tags:
+  日常: "#4fc08d"
+
+# 分类设置
+categories:
+  日常: dimgray
+
+# 社交媒体设置
+social:
+  - name: RSS
+    # set rss in your root config
+    # https://github.com/hexojs/hexo-generator-feed
+    link: /atom.xml # config.feed.path
+    icon: icon-rss-line
+    color: orange
+  - name: Twitter
+    link: https://twitter.com/TonySmith1sme
+    icon: icon-twitter-line
+    color: "#1da1f2"  
+  - name: GitHub
+    link: https://github.com/TonySmith1sme
+    icon: icon-github-line
+    color: "#181717"
+  - name: E-Mail
+    link: mailto:tonysmith1sme@gmail.com
+    icon: icon-mail-line
+    color: "#8E71C1"
+  - name: Telegram
+    link: https://t.me/TonySmith_1s_me
+    icon: icon-telegram-line
+    color: "#0088CC"
+  - name: Travelling
+    link: https://travellings.link
+    icon: icon-send-plane-2-line
+    color: black
+
+# 导航设置
+menu:
+  home:
+    path: /
+    icon: material-icons home
+  list:
+    - type: archives
+      path: /archives/
+      icon: material-icons work
+    - type: categories
+      path: /categories/
+      icon: material-icons folder
+    - type: tags
+      path: /tags/
+      icon: material-icons local_offer
+  custom:
+    title: Waline控制面板
+    path: https://waline-ebon-nu.vercel.app/ui
+    icon: material-icons comment
+
+ # CDN
+vendors:
+   host: 'https://fastly.jsdelivr.net/npm/'
