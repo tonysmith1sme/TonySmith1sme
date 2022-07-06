@@ -36,8 +36,8 @@ notice:
 # 背景设置
 bg_image:
   enable: true
-  url: https://tonysmith.vercel.app/img/bg/99133205_p0.jpg
-  dark: https://tonysmith.vercel.app/img/bg/98348437_p0.png
+  url: ./img/bg/94066688_p0.png
+  dark: ./img/bg/93612199_p0.jpeg
   opacity: 0.8
 
 # 亮暗模式
@@ -45,7 +45,7 @@ mode: auto
 
 # 头像设置
 avatar:
-  url: https://tonysmith.vercel.app/avatar.png
+  url: ./avatar.jpg
   rounded: true
   opacity: 1
 
