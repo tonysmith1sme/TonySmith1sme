@@ -10,7 +10,7 @@ A Linux noob,using [![Arch Linux](https://img.shields.io/badge/Arch%20Linux-008B
 - BGP Network (but i'm not a professional BGP player)
 
 ### 📱 My Devices
-[![Huawei nova 3](https://img.shields.io/badge/Huawei%2010-000000?style=flat-square&logo=huawei&logoColor=red&labelColor=)](https://www.gsmarena.com/huawei_nova_3-9267.php)
+[![Huawei nova 3](https://img.shields.io/badge/Huawei-000000?style=flat-square&logo=huawei&logoColor=red&labelColor=)](https://www.gsmarena.com/huawei_nova_3-9267.php)
 
 # 📫 How to reach me 
 - [Telegram](https://t.me/TonySmith_1s_me)
