@@ -40,8 +40,8 @@ notice:
 # 背景设置
 bg_image:
   enable: true
-  url: /img/bg/94066688_p0.png
-  dark: /img/bg/93612199_p0.jpeg
+  url: /img/bg/97584567_p0.jpeg
+  dark: /img/bg/96867799_p0.png
   opacity: 0.8
 
 # 亮暗模式
@@ -49,7 +49,7 @@ mode: auto
 
 # 头像设置
 avatar:
-  url: /avatar.jpg
+  url: /avatar.jpeg
   rounded: true
   opacity: 1
 
