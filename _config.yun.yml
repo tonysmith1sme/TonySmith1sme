@@ -40,8 +40,8 @@ notice:
 # 背景设置
 bg_image:
   enable: true
-  url: /img/bg/97584567_p0.jpeg
-  dark: /img/bg/96867799_p0.png
+  url: /img/bg/75951170_p0.jpeg
+  dark: /img/bg/Upscale_96637275_p0.png
   opacity: 0.8
 
 # 亮暗模式
