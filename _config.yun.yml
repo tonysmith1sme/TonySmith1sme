@@ -104,7 +104,7 @@ footer:
     enable: true
     prefix: 本博客已运行
     start_time: "2021-11-26 21:38:00"
-  custom_text: <a href="https://travellings.link/" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://travellings.link/assets/logo.gif" alt="开往-友链接力" width="120"></a>
+  custom_text: <a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120"></a>
   powered:
     enable: true
 
