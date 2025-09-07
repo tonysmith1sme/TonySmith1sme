@@ -150,10 +150,10 @@ social:
     link: /atom.xml # config.feed.path
     icon: icon-rss-line
     color: orange
-  - name: Twitter
-    link: https://twitter.com/TonySmith1sme
-    icon: icon-twitter-line
-    color: "#1da1f2"  
+  #- name: Twitter
+  #  link: https://twitter.com/TonySmith1sme
+  #  icon: icon-twitter-line
+  #  color: "#1da1f2"  
   - name: GitHub
     link: https://github.com/TonySmith1sme
     icon: icon-github-line
@@ -162,10 +162,10 @@ social:
     link: mailto:tonysmith1sme@gmail.com
     icon: icon-mail-line
     color: "#8E71C1"
-  - name: Telegram
-    link: https://t.me/TonySmith_1s_me
-    icon: icon-telegram-line
-    color: "#0088CC"
+  #- name: Telegram
+  #  link: https://t.me/TonySmith_1s_me
+  #  icon: icon-telegram-line
+  #  color: "#0088CC"
   - name: Travelling
     link: https://travellings.link
     icon: icon-send-plane-2-line
