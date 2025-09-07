@@ -13,20 +13,6 @@ links:
     desc: All at sea.
     color: "#0078e7"
 
-  - url: https://edenjohnson.cyou/
-    avatar: https://pic.edenjohnson.cyou/images/20200625174516.png
-    name: EdenJohnson
-    blog: Eden瞎写小屋
-    desc: 准初三屑的博客
-    color: "#0078e7"
-
-  - url: https://www.zyglq.cn
-    avatar: https://cos.zyglq.cn/1l.jpg
-    name: explorer
-    blog: explorer的blog
-    desc: 14岁，事初中生
-    color: "#39c5bb"
-
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
@@ -41,7 +27,7 @@ tip: 友链加载中～如失败请刷新重试～
 
 - 遵守中华人民共和国及服务商所在国（若有）法律，禁止包含*淫秽，色情，反动，恐怖*等内容．
 - 文章应为原创为主（包括人工烤肉文章）
-- 不得歧视任何人群，比如：性少数、残障人群、XX地区的人
+- 不得含有歧视残障人群、XX地区的人等内容
 
 ### 申请
 
@@ -58,7 +44,7 @@ tip: 友链加载中～如失败请刷新重试～
 }
 ~~~
 
-每周将会维护一次博客，我会尽快处理你的申请
+每周我都会维护一次博客，我会尽快处理你的申请
 
-最后祝你生活愉快
+最后祝您生活愉快
 
