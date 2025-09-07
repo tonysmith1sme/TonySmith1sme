@@ -58,7 +58,7 @@ favicon: /favicon.ico
 
 # 颜色设置
 colors:
-  primary: "#6200ee"
+  primary: "#66ccff"
   # bg: "#F5F5F5"
   selection_bg: "#8e71c1" # 选取文字时的背景色
   # 标签云中标签的起始色和结束色
