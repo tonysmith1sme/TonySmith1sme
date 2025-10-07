@@ -238,7 +238,7 @@ EDITOR=vim visudo
 
 ### 解除安装中文字型
 <div class="info">
-以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
+> 以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
 </div>
 
 Slackware 預裝的中文字型有好幾款，其中包括時下最流行的免費中文字型——思源黑體與思源明體。但在這兩套高品質開源中文字型出現之前，Linux 使用者們想顯示中文，除了從 Windows 或 Mac OS 複製字型來用（非法），只有幾種選擇：
@@ -300,7 +300,7 @@ export SDL_IM_MODULE=fcitx
 
 ## 設定第三方套件庫
 <div class="info">
-以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
+> 以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
 </div>
 
 我們剛剛已經用過了 Slackware 內建的套件管理程式—— slackpkg，但 slackpkg 並不支援直接下載第三方套件，只能安裝從其他來源下載的套件。好在，一群 Slackware 開發者維護了一個類似 Arch Linux 的 AUR、拿來放編譯套件腳本的地方：[slackbuilds.org](https://slackbuilds.org/)。簡單來說，套件腳本會做的事就是使用原始碼壓縮檔（tarball），用特定的方式產生安裝套件。而許多人也開發了與這個套件庫互動的程式，如 [sbopkg](https://sbopkg.org/)、[sbotools](https://pink-mist.github.io/sbotools/) 或 [sboui](https://github.com/montagdude/sboui)。我自己使用的是 sboui，因此接下來會示範如何安裝與設定 sboui。

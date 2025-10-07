@@ -744,7 +744,7 @@ sudo pacman -S zsh
 
 将 zsh 设置为默认的 Shell
 <div class="warning">
-如果你正在使用KDE的Konsole终端，你需要另外再设置使用 zsh
+> 如果你正在使用KDE的Konsole终端，你需要另外再设置使用 zsh
 </div>
 ```bash
 chsh -s /bin/zsh
