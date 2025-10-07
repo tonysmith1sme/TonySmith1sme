@@ -50,7 +50,7 @@ Arch Linux有多个镜像源，在[Arch Linux Downloads](https://archlinux.org/d
 
 首先前往[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2022.03.01/)中下载ISO
 
-![](https://lantapic.bangumi.cyou/img/20220326030059.png)
+![](./img/ArchLinux-Chinese-Install-Guide/20220326030059.png)
 
 下载完成之后备用
 
@@ -164,7 +164,7 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 
 然后就会出现一个界面，这里以一个中文化的界面作为对照
 
-![](https://lantapic.bangumi.cyou/img/20220326033131.png)
+![](./img/ArchLinux-Chinese-Install-Guide/20220326033131.png)
 
 ### 分区格式
 
@@ -239,8 +239,6 @@ mkdir /mnt/home # 创建 /mnt/home 文件夹
 mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区，在有用户资料分区的情况下才执行)
 ```
 
-（以上文段参考了[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/#%E6%8C%82%E8%BD%BD)并进行修改）
-
 ## 更换软件源
 
 接下来我们需要更新一下镜像源以加快我们的下载速度
@@ -275,7 +273,6 @@ nano /etc/pacman.d/mirrorlist # 新建软件源列表
 | `linux-lts` | 官方的长期支持内核，版本较低，但相对不容易滚挂 |
 | `linux-zen` | 社区制作的更适合日常使用的内核                 |
 
-（以上表格来自[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/#%E5%86%85%E6%A0%B8%E7%9A%84%E9%80%89%E6%8B%A9)）
 
 ### 安装命令
 
@@ -580,11 +577,6 @@ sudo pacman -S adobe-source-sans-fonts  # 思源黑体
 
 </div>
 
-<div class="info">
-
-> 以下资料整理来自[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/)
-
-</div>
 
 #### Intel 显卡
 
@@ -662,9 +654,9 @@ sudo pacman -S pocl # OpenCL 支持
 
 | 名称                                                         | 官方预览图                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [KDE Plasma](https://chitang.tech/posts/arch-guide/#kde-plasma) | ![KDE Plasma](https://kde.org/content/plasma-desktop/plasma-widgets.png) |
-| [GNOME](https://chitang.tech/posts/arch-guide/#gnome)        | ![GNOME](https://www.gnome.org/wp-content/uploads/2021/03/wgo-splash-40.png) |
-| [Xfce 4](https://chitang.tech/posts/arch-guide/#xfce)        | ![Xfce 4](https://cdn.xfce.org/about/screenshots/4.16-1.png) |
+| [KDE Plasma](https://tonysmith.vercel.app/2022/03/26/archlinux-chinese-install-guide/#kde-plasma) | ![KDE Plasma](https://kde.org/content/plasma-desktop/plasma-widgets.png) |
+| [GNOME](https://tonysmith.vercel.app/2022/03/26/archlinux-chinese-install-guide/#gnome)        | ![GNOME](https://www.gnome.org/wp-content/uploads/2021/03/wgo-splash-40.png) |
+| [Xfce 4](https://tonysmith.vercel.app/2022/03/26/archlinux-chinese-install-guide/#xfce)        | ![Xfce 4](https://cdn.xfce.org/about/screenshots/4.16-1.png) |
 
 还有一种就是[深度](https://www.deepin.org)的DDE（深度桌面环境），我不推荐你使用，深度的桌面环境在其他系统会有很多的Bug
 
@@ -700,7 +692,7 @@ sudo pacman -S xfce4 xfce4-goodies
 
 #### SDDM
 
-推荐与 [KDE Plasma](https://chitang.tech/posts/arch-guide/#kde-plasma) 配合使用
+推荐与 [KDE Plasma](https://tonysmith.vercel.app/2022/03/26/archlinux-chinese-install-guide/#kde-plasma) 配合使用
 
 ```bash
 sudo pacman -S sddm
@@ -709,7 +701,7 @@ sudo systemctl enable sddm
 
 #### GDM
 
-推荐与 [GNOME](https://chitang.tech/posts/arch-guide/#gnome) 配合使用
+推荐与 [GNOME](https://tonysmith.vercel.app/2022/03/26/archlinux-chinese-install-guide/#gnome) 配合使用
 
 ```bash
 sudo pacman -S gdm
