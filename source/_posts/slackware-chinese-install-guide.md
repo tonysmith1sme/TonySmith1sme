@@ -31,6 +31,7 @@ Slackware Linux 有两个版本：
 
 稳定版本下载：[32位](https://mirrors.slackware.com/slackware/slackware-iso/slackware-15.0-iso/) [64位](https://mirrors.slackware.com/slackware/slackware-iso/slackware64-15.0-iso/)
 Slackware -current下载（**AlienBob 构建的Live CD ISO**）：[32位](https://slackware.nl/slackware/slackware-current-iso/)   [64位](https://slackware.nl/slackware/slackware64-current-iso/)
+
 ### 包管理器
 Slackware Linux 的包管理器在安装某个包的时候**不会去安装这个包所需要的依赖**，包括卸载时也不会。（卸载时不处理依赖有个好处就是不会被误删一些还在使用的包）如果你觉得安装包的时候还需要自己手动处理依赖很麻烦的话可以使用一些第三方工具去解决。
 
@@ -229,11 +230,154 @@ EDITOR=vim visudo
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131315.png)
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131343.png)
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131354.png)
-### 设置中文
+# 进一步设置以方便日用
+
+## 设置中文
 在启动KDE成功后打开系统设置并设置为中文
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131534.png)
-同样地检查Fcitx5输入法的设置
-![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131704.png)
 
-# 进一步设置以方便日用
-没有时间写了，请等待更新……（2025年10月1日）
+### 解除安装中文字型
+<div class="info">
+以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
+</div>
+
+Slackware 預裝的中文字型有好幾款，其中包括時下最流行的免費中文字型——思源黑體與思源明體。但在這兩套高品質開源中文字型出現之前，Linux 使用者們想顯示中文，除了從 Windows 或 Mac OS 複製字型來用（非法），只有幾種選擇：
+
+- 文鼎的四套開源字型，兩套繁體兩套簡體；有明體跟楷體可以使用。
+- CwTeX 系列字型。（後來爆出是由文鼎字型描邊重製而成，遊走法律邊緣）
+- 文泉驛的兩套字型：文泉驛正黑，與文泉驛微米黑。
+
+Slackware 在思源系列字體推出之前就已經打滾多年，因此包含當時最沒有版權爭議的中文顯示字體——文泉驛正黑，也是再正常不過的事。不過，文泉驛正黑因為是由部件組字的關係，字型品質其實不怎麼好；既然有了思源黑體，就可以讓文泉驛正黑功成身退了。要解除安裝，直接打開一個新的終端機視窗，先輸入
+
+```bash
+sudo su
+```
+
+並輸入密碼以切換到 root 帳號。再來執行：
+
+```bash
+slackpkg remove wqy-zenhei-font-ttf
+```
+
+就可以將其移除。Slackware 系統中同時存在一套品質也不怎麼好的日文字型，這邊一併移除：
+
+```bash
+slackpkg remove sazanami-fonts-ttf
+```
+
+最後為了防止它們在安裝更新時一起被裝回來，可以用你習慣的文字編輯器開啟 `/etc/slackpkg/blacklist` 文字檔，並在檔案末端加入
+
+```bash
+wqy-zenhei-font-ttf
+sazanami-fonts-ttf
+```
+
+如此一來，重開機之後，介面的中文字應該都是以思源黑體顯示。
+
+再來在安裝軟體、輸入法之前，我們需要先設定第三方軟體源。
+
+## 安装和使用Fcitx 5
+现阶段 Slackware -current 已默认使用最新的 Fcitx 5（而稳定版本仍在使用老版本的 Fcitx），所以不用太折腾安装输入法的事情，直接用Fcitx 5的拼音就好了。
+![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131704.png)
+即使使用了最新的 Fcitx 5，但是X11的环境变量其实是没有设置好的，所以需要我们进一步地进行设置
+
+编辑 `.xprofile`
+
+```bash
+vim ~/.xprofile
+```
+
+添加下面这几行：
+
+```
+export LANG=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+export GTK_IM_MODULE=fcitx # 带有fcitx字样的是为了能让Fcitx5输入法能正常使用
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+```
+
+## 設定第三方套件庫
+<div class="info">
+以下内容引用 [ltlnx](https://ltlnx.tw/slackware-chinese-install-guide.html)
+</div>
+
+我們剛剛已經用過了 Slackware 內建的套件管理程式—— slackpkg，但 slackpkg 並不支援直接下載第三方套件，只能安裝從其他來源下載的套件。好在，一群 Slackware 開發者維護了一個類似 Arch Linux 的 AUR、拿來放編譯套件腳本的地方：[slackbuilds.org](https://slackbuilds.org/)。簡單來說，套件腳本會做的事就是使用原始碼壓縮檔（tarball），用特定的方式產生安裝套件。而許多人也開發了與這個套件庫互動的程式，如 [sbopkg](https://sbopkg.org/)、[sbotools](https://pink-mist.github.io/sbotools/) 或 [sboui](https://github.com/montagdude/sboui)。我自己使用的是 sboui，因此接下來會示範如何安裝與設定 sboui。
+
+### 安裝
+
+- 首先，先到 slackbuilds.org 搜尋 sboui。我們會到達這個頁面：
+
+slackbuilds.org 上的 sboui 頁面
+
+我們捲動到下面，點擊 Source Downloads 跟 Download SlackBuild 下面的連結來下載原始碼檔案，分別是 sboui-<版本>.tar.gz 跟 sboui.tar.gz。在最下面可以看到 This requires: libconfig，這代表我們需要下載另一個套件—— libconfig 的腳本。點一下連結，你會被帶到 libconfig 的下載頁面：
+
+slackbuilds.org 上的 libconfig 頁面
+
+在這裡，我們一樣捲動到下面，點擊 Source Downloads 跟 Download SlackBuild 下面的連結，分別是 libconfig-<版本>.tar.gz 跟 libconfig.tar.gz。
+
+- 下載完之後，先解壓縮 sboui.tar.gz 跟 libconfig.tar.gz。要確定他們是解壓縮到各自的資料夾，而不是當前的資料夾。
+- 解壓縮完後，將 sboui-<版本>.tar.gz 移動到 sboui 資料夾內，再把 libconfig-<版本>.tar.gz 移到 libconfig 資料夾內。上述動作做完之後，Downloads 資料夾應該會長這樣：（在我寫這篇文章的時候，libconfig 的版本是 1.7.2，sboui 的版本是 2.3）
+
+```bash
+$ tree ~/Downloads
+/home/ltlnx/Downloads/
+├── libconfig
+│   ├── README
+│   ├── libconfig-1.7.2.tar.gz
+│   ├── libconfig.SlackBuild
+│   ├── libconfig.info
+│   ├── remove_scanner.patch.gz
+│   └── slack-desc
+└── sboui
+    ├── README
+    ├── doinst.sh
+    ├── sboui-2.3.tar.gz
+    ├── sboui.SlackBuild
+    ├── sboui.info
+    └── slack-desc
+```
+
+- 再來，先到 libconfig 資料夾內（cd libconfig），執行以下指令：
+
+```bash
+$ chmod +x libconfig.SlackBuild
+$ su  # 切換到 root 帳號，如果有設定 sudo 也可以執行 sudo su
+# ./libconfig.SlackBuild
+```
+
+到這邊，libconfig 就會開始編譯，跑完之後在 /tmp 資料夾內會有包裝好的套件。
+- 再來安裝剛包裝好的套件：
+
+```bash
+installpkg /tmp/libconfig-1.7.2-x86_64-2_SBo.tgz
+```
+
+你看到的檔案名稱很可能會跟我的不同，但開頭一定是 libconfig。可以在打完 /tmp/libconfig 後按一下 Tab 鍵以自動完成。
+
+- 最後，用一樣的方式安裝 sboui：
+
+```bash
+$ dirs
+~/Downloads/libconfig
+$ cd ../sboui
+$ chmod +x sboui.SlackBuild
+$ su
+# ./sboui.SlackBuild
+# installpkg /tmp/sboui-2.3-x86_64-1_SBo.tgz
+```
+
+完成之後，可以試試看以 root 帳號在終端機執行 sboui --version：
+
+```bash
+# sboui --version
+sboui 2.3
+Copyright (C) 2016-2022 Daniel Prosser
+Expat/MIT License: https://opensource.org/licenses/MIT
+This is free software; you are free to change it and redistribute it.
+This software is presented 'as is', without warranty of any kind.
+```
+
+## 通讯软件
+没时间写了，等待更新吧……（2025年10月7日）
