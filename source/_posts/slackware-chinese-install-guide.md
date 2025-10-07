@@ -35,6 +35,10 @@ Slackware -current下载（**AlienBob 构建的Live CD ISO**）：[32位](https:
 ### 包管理器
 Slackware Linux 的包管理器在安装某个包的时候**不会去安装这个包所需要的依赖**，包括卸载时也不会。（卸载时不处理依赖有个好处就是不会被误删一些还在使用的包）如果你觉得安装包的时候还需要自己手动处理依赖很麻烦的话可以使用一些第三方工具去解决。
 
+### init
+Slackware Linux 的 init 是使用 BSD 风格的 SystemV init 而不是 systemd，如果你意见习惯了使用 systemd 可能需要适应一阵子
+有关详情请看： [System init](http://www.slackware.com/config/init.php)
+
 # 基础安装
 本教程将以 Slackware -current 作为演示，使用 UEFI 引导环境。
 ## 准备工作
@@ -206,6 +210,39 @@ mkswap /dev/sda2 # 格式化 /dev/sda2 为 swap 分区（交换分区）
 # 进行基础配置
 完成安装并重启电脑后，使用root用户登录
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-130604.png)
+
+## 安装 grub
+如果你并不喜欢 ELILO，那么你可以自己另外安装 grub
+
+如果你需要GRUB能引导到其他系统（例如Windows）我们要先开启GRUB使用**os-prober**才可以让GRUB引导到其他系统
+
+```bash
+vim /etc/default/grub
+```
+
+在结尾或者其他位置中添加`GRUB_DISABLE_OS_PROBER="false"`保存并退出即可
+
+### UEFI + GPT
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub # 在 /boot 中安装GRUB引导
+grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
+```
+
+### Legacy + MBR
+
+<div class="info">
+
+> 设sdX为你的硬盘号
+
+</div>
+
+```bash
+grub-install --target=i386-pc /dev/sdX  # 在 /dev/sdX 安装引导，不要加分区号
+grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
+```
+
+
 ## 创建新用户
 
 很多软件是不能直接使用root用户的，而且直接使用root用户是很危险的，~~比如运行一个`rm -rf /*`都不带`sudo`的~~
@@ -230,6 +267,22 @@ EDITOR=vim visudo
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131315.png)
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131343.png)
 ![](./img/Slackware-Chinese-Install-Guide/QQ20251001-131354.png)
+
+## 设置网络
+不知道出于什么原因，即使 Slackware Linux 已经提供了一键网络配置向导（一开始安装系统的时候也运行了）`netconfig`，但是你选择 NetworkManager 的话它是不会给你默认在 init 里设置好让它启动服务的，并且官方文档（[Network Setup](http://www.slackware.com/config/network.php)）中对此没有过多的解释，你需要进一步的设置才能开启。
+
+设置init配置文件的权限
+
+```bash
+chmod +x /etc/rc.d/rc.networkmanager
+```
+
+启动服务
+
+```bash
+/etc/rc.d/rc.networkmanager 
+```
+
 # 进一步设置以方便日用
 
 ## 设置中文
@@ -311,7 +364,8 @@ export SDL_IM_MODULE=fcitx
 
 slackbuilds.org 上的 sboui 頁面
 
-我們捲動到下面，點擊 Source Downloads 跟 Download SlackBuild 下面的連結來下載原始碼檔案，分別是 sboui-<版本>.tar.gz 跟 sboui.tar.gz。在最下面可以看到 This requires: libconfig，這代表我們需要下載另一個套件—— libconfig 的腳本。點一下連結，你會被帶到 libconfig 的下載頁面：
+我們捲動到下面，點擊 Source Downloads 跟 Download SlackBuild 下面的連結來下載原始碼檔案，分別是 sboui-<版本>.tar.gz 跟 sboui.tar.gz。
+在最下面可以看到 *This requires: libconfig*，這代表我們需要下載另一個套件—— libconfig 的腳本。點一下連結，你會被帶到 libconfig 的下載頁面：
 
 slackbuilds.org 上的 libconfig 頁面
 
@@ -377,6 +431,28 @@ Copyright (C) 2016-2022 Daniel Prosser
 Expat/MIT License: https://opensource.org/licenses/MIT
 This is free software; you are free to change it and redistribute it.
 This software is presented 'as is', without warranty of any kind.
+```
+
+### sbopkg
+<div class="info">
+> 这一段是我自己写的（2025年10月7日）
+</div>
+
+由于某些原因，引用原文提到的 sboui 可能会在编译安装时遇到 CMake 小于 3.5 的兼容性被移除的问题，而且 sboui 也只不过是个类图形化的包管理器而已，所以我这里外加一段安装 sbopkg。
+首先前往 sbopkg 的网站，点击 [Downloads](https://sbopkg.org/downloads.php)
+你会看到一句话：
+*Package: A pre-built Slackware package of the latest version of sbopkg can be downloaded here.*
+直接点击 *here* 就可以下载已经编译好的 pkg 安装包
+并使用 `installpkg` 安装
+
+```bash
+installpkg sbopkg-version-noarch-1_wsr.tgz
+```
+
+如果你需要升级可以这么做
+
+```bash
+upgradepkg sbopkg-version-noarch-1_wsr.tgz
 ```
 
 ## 通讯软件
