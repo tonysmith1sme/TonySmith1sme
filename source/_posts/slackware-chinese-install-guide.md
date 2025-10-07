@@ -1,7 +1,12 @@
 ---
 title: 这可能是你能找到的全网有关Slackware Linux最详细的中文安装教程
 date: 2025-10-01 10:46:27
-tags: Slackware,Linux
+author: 
+ - Tony Smith
+tags: 
+ - Slackware
+ - Linux
+ - 保姆级教程
 categories: 教程
 ---
 # 前言
